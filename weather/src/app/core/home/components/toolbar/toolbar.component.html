@@ -1,0 +1,48 @@
+<mat-toolbar class="toolbar">
+  <div>
+    <button mat-icon-button (click)="openSidenav()" class="menu-btn">
+      <img src="../../../../../assets/images/list.png" alt="Menu" />
+    </button>
+  </div>
+
+  <div class="logo d-flex">
+    <img
+      src="../../../../../assets/images/weather-2021-12-07.png"
+      alt="logo"
+      class="logo-img"
+    />
+  </div>
+  <div class="navtabs-container">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a (click)="home()" class="navbar-item"> {{ "Home" | translate }} </a>
+      <a (click)="customerList()" class="navbar-item">
+        {{ "Weather_List" | translate }}
+      </a>
+      <a (click)="customerAdd()" class="navbar-item">
+        {{ "Weather_Forcast" | translate }}
+      </a>
+    </nav>
+  </div>
+  <div #languages class="language">
+    <button class="menu-btn" mat-button [matMenuTriggerFor]="language">
+      <img
+        [src]="homeService.selectedLanguage.value.icon"
+        [alt]="homeService.selectedLanguage.value.name"
+        class="img-language"
+      />
+    </button>
+    <mat-menu #language="matMenu" yPosition="below" xPosition="after">
+      <button
+        mat-menu-item
+        *ngFor="let language of languageList"
+        class="language-btn"
+        (click)="switchLang(language)"
+      >
+        <img [src]="language.icon" [alt]="language.name" class="img-language" />
+        <span> {{ language.name }}</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<mat-tab-nav-panel #tabPanel>
+</mat-tab-nav-panel>

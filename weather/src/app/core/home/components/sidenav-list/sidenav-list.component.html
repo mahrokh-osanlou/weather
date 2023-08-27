@@ -1,0 +1,18 @@
+<mat-nav-list class="sidenav-list">
+  <a mat-list-item routerLink="pages" (click)="onToggleClose()">
+    <img class="home-img" src="../../../../../assets/images/home.png" alt="Home" />
+    <span>{{ "Home" | translate }}</span>
+  </a>
+  <a mat-list-item routerLink="/pages/weather-list" (click)="onToggleClose()">
+    <img src="../../../../../assets/images/weather.png" alt="List" />
+    <span>{{ "Weather_List" | translate }}</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="/pages/weather-forcast"
+    (click)="onToggleClose()"
+  >
+    <img src="../../../../../assets/images/rain.png" alt="Forcast" />
+    <span> {{ "Weather_Forcast" | translate }}</span>
+  </a>
+</mat-nav-list>
