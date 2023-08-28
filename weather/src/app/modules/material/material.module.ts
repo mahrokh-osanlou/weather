@@ -77,6 +77,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
     MatSlideToggleModule,
     MatRadioModule,
     MatPaginatorModule,
+    MatGridListModule
   ],
   imports: [
     MatIconModule,
@@ -113,7 +114,6 @@ import { MatGridListModule } from "@angular/material/grid-list";
     MatRadioModule,
     MatPaginatorModule,
     MatSliderModule,
-    MatGridListModule
   ],
   providers: [
     {
