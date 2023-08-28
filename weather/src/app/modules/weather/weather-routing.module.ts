@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
 import { AuthGuard } from "src/app/core/guards/auth.guard";
-import { SearchWeatherComponent } from "./components/search-weather/search-weather.component";
 import { WeatherForcastComponent } from "./components/weather-forcast/weather-forcast.component";
 import { WeatherListComponent } from "./components/weather-list/weather-list.component";
 
@@ -19,5 +18,4 @@ export const routes: Routes = [
 export const routedComponents = [
   WeatherListComponent,
   WeatherForcastComponent,
-  SearchWeatherComponent
 ];

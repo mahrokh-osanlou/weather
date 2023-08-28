@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material/material.module';
 import { routedComponents, routes } from './weather-routing.module';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [...routedComponents],
@@ -16,6 +17,7 @@ import { routedComponents, routes } from './weather-routing.module';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
+    TranslateModule
   ],
   providers: [],
 })
