@@ -1,5 +1,13 @@
 {
   "Home": "Heim",
   "Weather_List": "Wetterliste",
-  "Weather_Forcast": "Wettervorhersage"
+  "Weather_Forcast": "Wettervorhersage",
+  "City": "Stadt",
+  "City_is_required": "Stadt ist erforderlich",
+  "Search": "Suchen",
+  "Temperature": "Temperatur",
+  "Humidity": "Feuchtigkeit",
+  "Weather_Condition": "Wetterlage",
+  "Name": "Name",
+  "Country": "Land"
 }

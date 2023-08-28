@@ -1,5 +1,13 @@
 {
-  "Home":"Home",
-  "Weather_List":"Weather List",
-  "Weather_Forcast" :"Weather Forcast"
+  "Home": "Home",
+  "Weather_List": "Weather List",
+  "Weather_Forcast": "Weather Forcast",
+  "City": "City",
+  "City_is_required": "City is required",
+  "Search": "Search",
+  "Temperature": "Temperature",
+  "Humidity": "Humidity",
+  "Weather_Condition": "Weather Condition",
+  "Name": "Name",
+  "Country": "Country"
 }
