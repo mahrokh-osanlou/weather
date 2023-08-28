@@ -6,6 +6,7 @@
   background-color: var(--menu_background);
   padding: 0.5rem;
   color: var(--menu_font);
+  overflow-x: auto;
 }
 
 .logo {
@@ -46,4 +47,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }

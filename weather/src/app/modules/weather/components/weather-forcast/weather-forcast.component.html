@@ -35,46 +35,48 @@
     </div>
   </form>
 </div>
-<mat-grid-list
-  cols="4"
-  rowHeight="200px"
-  class="grid"
-  *ngIf="weatherService.toShow"
-  [gutterSize]="'20px'"
->
-  <mat-grid-tile colspan="1" rowspan="1" [style.background]="'lightpink'">
-    <h1 class="name">
-      {{ (weatherService.$weatherResult | async).name }} -
-      {{ (weatherService.$weatherResult | async).sys.country }}
-    </h1>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="2" rowspan="1" [style.background]="'#DDBDF1'">
-    <div class="d-flex justify-content-between flex-column">
-      <div class="d-flex flex-row align-items-center">
+<div class="row d-flex flex-row data" *ngIf="weatherService.toShow">
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 my-3">
+    <div
+      class="d-flex flex-row align-items-center justify-content-center h-100 box"
+    >
+      <h1 class="name">
+        {{ (weatherService.$weatherResult | async).name }} -
+        {{ (weatherService.$weatherResult | async).sys.country }}
+      </h1>
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 my-3">
+    <div class="d-flex justify-content-between flex-column h-100 box">
+      <div class="d-flex flex-row align-items-center ms-4">
         <span class="me-3 title">{{ "Temperature" | translate }}:</span>
         <h2 class="content">
           {{ (weatherService.$weatherResult | async).temp }}
         </h2>
       </div>
-      <div class="d-flex flex-row align-items-center">
+      <div class="d-flex flex-row align-items-center ms-4">
         <span class="me-3 title">{{ "Humidity" | translate }}:</span>
         <h2 class="content">
           {{ (weatherService.$weatherResult | async).main.humidity }} %
         </h2>
       </div>
-      <div class="d-flex flex-row align-items-center">
+      <div class="d-flex flex-row align-items-center ms-4">
         <span class="me-3 title">{{ "Weather_Condition" | translate }}:</span>
         <h2 class="content">
           {{ (weatherService.$weatherResult | async).weather[0].description }}
         </h2>
       </div>
     </div>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="1" rowspan="1" [style.background]="'white'">
-    <img
-      class="condition"
-      [src]="(weatherService.$weatherResult | async).icon"
-      [alt]="(weatherService.$weatherResult | async).weather[0].description"
-    />
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 my-3">
+    <div
+      class="d-flex flex-row align-items-center justify-content-center h-100 box"
+    >
+      <img
+        class="condition"
+        [src]="(weatherService.$weatherResult | async).icon"
+        [alt]="(weatherService.$weatherResult | async).weather[0].description"
+      />
+    </div>
+  </div>
+</div>

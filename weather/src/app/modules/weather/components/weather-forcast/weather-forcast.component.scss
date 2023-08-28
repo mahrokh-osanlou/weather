@@ -80,6 +80,49 @@
   color: #6e0940;
 }
 
+.data{
+  width: 90%;
+  margin: auto;
+}
+
 .condition {
   width: 100px;
 }
+
+.box{
+  width: 100%;
+  padding: 0 1rem 1rem;
+  background-color: #fefefe;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #6f84a5 0%, #8db4f4 108%);
+  transform: translate3d(0px, 0px, 0) scale(1);
+  filter: blur(10px);
+  opacity: var(0.5);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
