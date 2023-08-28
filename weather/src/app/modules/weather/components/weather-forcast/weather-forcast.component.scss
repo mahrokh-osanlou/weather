@@ -1,0 +1,85 @@
+.field {
+  width: 90%;
+  position: relative;
+  margin: auto;
+}
+
+.error {
+  color: var(--admin_error);
+}
+
+.prefix,
+.profix,
+.none {
+  position: relative;
+}
+
+.prefix::before {
+  content: "";
+  height: 56px;
+  width: 5px;
+  position: absolute;
+  background-color: var(--admin_error);
+  left: 1px;
+  top: 0px;
+  border-radius: 5px 0 0 5px;
+}
+
+.profix::before {
+  content: "";
+  height: 56px;
+  width: 5px;
+  position: absolute;
+  background-color: var(--admin_success);
+  left: 1px;
+  top: 0px;
+  border-radius: 5px 0 0 5px;
+}
+
+.none::before {
+  content: "";
+  height: 55px;
+  width: 5px;
+  position: absolute;
+  background-color: inherit;
+  left: 1px;
+  top: 5px;
+  border-radius: 5px 0 0 5px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.search {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.grid {
+  width: 90%;
+  margin: auto;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: var(--menu_background);
+}
+
+.content {
+  color: #9370db;
+}
+
+.name {
+  color: #6e0940;
+}
+
+.condition {
+  width: 100px;
+}

@@ -1,1 +1,80 @@
-<p>weather-forcast works!</p>
+<div class="forcast">
+  <form class="d-flex mt-4 form flex-column">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="d-flex justify-content-start align-items-start flex-column">
+          <mat-form-field
+            class="field mt-2"
+            appearance="outline"
+            [ngClass]="
+              weatherService.cityFormControl.valid ? 'profix' : 'prefix'
+            "
+          >
+            <input
+              type="text"
+              matInput
+              [formControl]="weatherService.cityFormControl"
+              [errorStateMatcher]="matcher"
+              placeholder="{{ 'City' | translate }}"
+              (keyup.enter)="weatherService.search()"
+            />
+            <mat-error
+              *ngIf="weatherService.cityFormControl.hasError('required')"
+              >{{ "City_is_required" | translate }}</mat-error
+            >
+            <img
+              src="../../../../../assets/images/smart.png"
+              alt=""
+              class="search"
+              (click)="weatherService.search()"
+              matTooltip="{{ 'Search' | translate }}"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<mat-grid-list
+  cols="4"
+  rowHeight="200px"
+  class="grid"
+  *ngIf="weatherService.toShow"
+  [gutterSize]="'20px'"
+>
+  <mat-grid-tile colspan="1" rowspan="1" [style.background]="'lightpink'">
+    <h1 class="name">
+      {{ (weatherService.$weatherResult | async).name }} -
+      {{ (weatherService.$weatherResult | async).sys.country }}
+    </h1>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="1" [style.background]="'#DDBDF1'">
+    <div class="d-flex justify-content-between flex-column">
+      <div class="d-flex flex-row align-items-center">
+        <span class="me-3 title">{{ "Temperature" | translate }}:</span>
+        <h2 class="content">
+          {{ (weatherService.$weatherResult | async).temp }}
+        </h2>
+      </div>
+      <div class="d-flex flex-row align-items-center">
+        <span class="me-3 title">{{ "Humidity" | translate }}:</span>
+        <h2 class="content">
+          {{ (weatherService.$weatherResult | async).main.humidity }} %
+        </h2>
+      </div>
+      <div class="d-flex flex-row align-items-center">
+        <span class="me-3 title">{{ "Weather_Condition" | translate }}:</span>
+        <h2 class="content">
+          {{ (weatherService.$weatherResult | async).weather[0].description }}
+        </h2>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1" rowspan="1" [style.background]="'white'">
+    <img
+      class="condition"
+      [src]="(weatherService.$weatherResult | async).icon"
+      [alt]="(weatherService.$weatherResult | async).weather[0].description"
+    />
+  </mat-grid-tile>
+</mat-grid-list>
